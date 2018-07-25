@@ -53,8 +53,75 @@ openHomepage();
 function teach(){
     var myecharts=echarts.init(document.getElementById("teachscale1"));
     var option= {
+       /*
+        color:["#ffe205","#05ff26"],
+        tooltip: {
+            show:true,
+        },
+        legend: {
+            data:['教育经费占比', 'GDP增长速率'],
+            show: true,
+            left:80,
+            top:18,
+            orient: 'vertical',
+            textStyle: {
+                color: "#ff1205"
+            }
+        },
+        grid: {
+            top: 70,
+            bottom: 50
+        },
+        xAxis: {
+            type: 'category',
+            axisTick: {
+                alignWithLabel: true
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'red',
+                }
+             },
+            data: [2011, 2012, 2013, 2015, 2016, 2017],
+            name:"年份",
+            nameTextStyle: {
+                color: "#08e2effc",
+            },
+            axisLabel:{
+                color:"#31ff00"
+            }
+        },
+        yAxis:
+            {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: 'red',
+                    }
+                },
+                data: [0, 2, 4, 6, 8, 10],
+                name:"比例:%",
+                nameTextStyle: {
+                    color: "#08e2effc",
+                },
+            },
+        series: [
+            {
+                name:'教育经费占比',
+                type:'line',
+                xAxisIndex: 1,
+                smooth: true,
+                data: ,
+            },
+            {
+                name:'',
+                type:'line',
+                smooth: true,
+                data:,
+            }
+        ]*/
         title: {
-            text: '近8年教育经费占比(%)',
+            text: '近6年教育经费占比',
             textStyle: {
                 color: '#fffff0',
                 fontSize: 14,
@@ -62,51 +129,70 @@ function teach(){
             },
             left:"center"
         },
-        color:["#f1e007","red"],
+        color:["#ffe205","#05ff26"],
         legend: {
-            show: true,
-            left:0,
-            top:18,
-            orient: 'vertical',
+            show:true,
+            top:35,
             textStyle: {
-                color: "#ff1205"
+                color: "#31ff00"
             }
         },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#fff',
-                    backgroundColor: '#da0b739c',
-                    borderRadius: 3,
-                    padding: [3, 5]
+        grid: {
+            top:90,
+            left: '3%',
+            right: 40,
+            bottom: '3%',
+            containLabel: true
+        },
+        tooltip:{
+            show:true,
+        },
+        xAxis: {
+            type: 'category',
+            data: [2011, 2012, 2013, 2015, 2016, 2017],
+            axisLabel:{
+                color:"#31ff00"
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'red',
                 }
             },
-            center: ['50%', '55%'],
-            radius: 72,
-            indicator: [
-                { name: 2010, max: 12,min:0},
-                { name: 2012, max: 12,min:0},
-                { name: 2013, max: 12,min:0},
-                { name: 2014, max: 12,min:0},
-                { name: 2015, max: 12,min:0},
-                { name: 2016, max: 12,min:0},
-                { name: 2017, max: 12,min:0}
-            ],
+            name:"年份",
+            nameTextStyle: {
+                color: "#08e2effc",
+            },
         },
-        series: [{
-            type: 'radar',
-            data : [
-                {
-                    value : [3.66,3.93,4.28,4.3,4.1,4.26,5.2,4.1],
-                    name : '教育经费占比'
-                },
-                {
-                    value : [10.64,9.54,7.86,7.76,7.7,6.9,6.7,6.9],
-                    name : 'GDP增长速率'
+        yAxis: {
+            type: 'value',
+            splitLine: {
+                show: false
+            },
+            axisLabel:{
+                color:"#31ff00"
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'red',
                 }
-            ]
-        }]
+            },
+            name:"比例:%",
+            nameTextStyle: {
+                color: "#08e2effc",
+            },
+        },
+        series: [
+            {
+                name:"教育经费占比",
+                data: [4.28,4.3,4.1,4.26,5.2,4.1],
+                type: 'line',
+                smooth: true
+            }, {
+                name:"小学在校人数",
+                data: [7.86,7.76,7.7,6.9,6.7,6.9],
+                type: 'line',
+                smooth: true
+            }]
     }
     myecharts.setOption(option);
 }
